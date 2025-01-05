@@ -4,6 +4,7 @@ import { createAssistant } from './openai/createAssistant';
 import { createThread } from './openai/createThread';
 import { createRun } from './openai/createRun';
 import { performRun } from './openai/performRun';
+import "dotenv/config" ;
 
 
 async function main() {
