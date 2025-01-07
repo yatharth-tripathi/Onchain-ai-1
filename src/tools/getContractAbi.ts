@@ -59,14 +59,14 @@ function extractFunctionSignatures(abiString: string, functionName?: string): st
             .filter((item: any) => item.type === 'function')
             .map((fn: any) => `${fn.name}(${(fn.inputs || []).map((i: any) => i.type).join(',')})`);
 
-        // If looking for specific function
+        
         if (functionName) {
-            // Try exact match first
+            
             const exact = functions.find((f: string) =>
                 f.toLowerCase().startsWith(`${functionName.toLowerCase()}(`));
             if (exact) return exact;
 
-            // Try partial match
+            
             const partial = functions.find((f: string) =>
                 f.toLowerCase().includes(functionName.toLowerCase()));
             if (partial) return partial;
